@@ -1,0 +1,400 @@
+/* ========================================
+   HERO СЕКЦИЯ - Главный баннер
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-2xl) 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    animation: heroBackground 20s ease-in-out infinite;
+}
+
+@keyframes heroBackground {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.hero__container {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+}
+
+.hero__content {
+    color: var(--text-white);
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-white);
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.01em;
+}
+
+.hero__title--gradient {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706, #b45309);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    position: relative;
+}
+
+.hero__title--gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.hero__subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-white);
+    opacity: 1;
+    line-height: 1.6;
+    max-width: 450px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero__buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+}
+
+.hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 300px;
+    animation: slideInRight 1s ease-out 0.3s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero__card {
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-white);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal);
+    animation: float 8s ease-in-out infinite;
+    cursor: pointer;
+    text-align: center;
+    padding: var(--spacing-sm);
+}
+
+.hero__card:hover {
+    transform: scale(1.15) translateY(-15px) rotate(5deg);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero__card--1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+}
+
+.hero__card--2 {
+    top: 45%;
+    right: 10%;
+    animation-delay: 2.5s;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(240, 147, 251, 0.3));
+}
+
+.hero__card--3 {
+    bottom: 15%;
+    left: 25%;
+    animation-delay: 5s;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.3), rgba(99, 102, 241, 0.3));
+}
+
+.hero__card span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: var(--spacing-xs);
+    text-align: center;
+    line-height: 1.2;
+    opacity: 0.9;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(-1deg);
+    }
+}
+
+/* Дополнительные элементы */
+.hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .hero__container {
+        gap: var(--spacing-xl);
+    }
+    
+    .hero__title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-xl);
+    }
+    
+    .hero__title {
+        font-size: 3rem;
+    }
+    
+    .hero__visual {
+        height: 400px;
+        order: -1;
+    }
+    
+    .hero__card {
+        width: 120px;
+        height: 120px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero__container {
+        gap: var(--spacing-md);
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    
+    .hero__buttons {
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero__card {
+        width: 110px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+    
+    .hero__card span {
+        font-size: 0.65rem;
+    }
+    
+    .hero__visual {
+        height: 200px;
+    }
+    
+    .hero__badge {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 45vh;
+        padding: var(--spacing-md) 0;
+    }
+    
+    .hero__title {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero__subtitle {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero__buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .hero__buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .hero__card {
+        width: 90px;
+        height: 70px;
+        font-size: 1.25rem;
+    }
+    
+    .hero__card span {
+        font-size: 0.6rem;
+    }
+    
+    .hero__visual {
+        height: 180px;
+    }
+    
+    .hero__card--1 {
+        top: 10%;
+        left: 5%;
+    }
+    
+    .hero__card--2 {
+        top: 40%;
+        right: 5%;
+    }
+    
+    .hero__card--3 {
+        bottom: 10%;
+        left: 20%;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        min-height: 40vh;
+    }
+    
+    .hero__title {
+        font-size: 1.5rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .hero__card {
+        width: 80px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    .hero__card span {
+        font-size: 0.55rem;
+    }
+    
+    .hero__visual {
+        height: 150px;
+    }
+}

@@ -1,0 +1,50 @@
+/* ========================================
+   ADDITIONAL PRINCIPLES - Дополнительные принципы
+   ======================================== */
+
+.additional-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.additional-principle {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border-top: 4px solid var(--accent-color);
+}
+
+.additional-principle:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-top-color: var(--primary-color);
+}
+
+.additional-principle h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.additional-principle p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .additional-principles {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .additional-principle {
+        padding: var(--spacing-md);
+    }
+}

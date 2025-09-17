@@ -1,0 +1,886 @@
+/* ========================================
+   KEY INSIGHTS - Ключевые выводы
+   ======================================== */
+
+.insights-container {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.insight-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border-left: 4px solid var(--success-color);
+    position: relative;
+}
+
+.insight-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--primary-color);
+}
+
+.insight-item::before {
+    content: '💡';
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+.insight-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.insight-item p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .insight-item {
+        padding: var(--spacing-md);
+    }
+    
+    .insight-item:hover {
+        transform: translateY(-4px);
+    }
+    
+    .insight-item h3 {
+        font-size: 1.125rem;
+    }
+    
+    .insight-item::before {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        font-size: 1.25rem;
+    }
+    
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .principle-item {
+        padding: var(--spacing-lg);
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .principle-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .principle-content h4 {
+        font-size: 1.125rem;
+    }
+    
+    .mistakes-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .mistake-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .mistake-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.375rem;
+    }
+    
+    .mistake-header h4 {
+        font-size: 1rem;
+    }
+    
+    .recommendations {
+        padding: var(--spacing-lg);
+    }
+    
+    .recommendations h3 {
+        font-size: 1.25rem;
+    }
+    
+    .recommendation-item {
+        padding: var(--spacing-lg);
+    }
+    
+    .recommendation-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.125rem;
+    }
+    
+    .recommendation-content h4 {
+        font-size: 1rem;
+    }
+    
+    .checklist-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .checklist-section h3 {
+        font-size: 1.25rem;
+    }
+    
+    .checklist-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .metric-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .metric-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .metric-content h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .principle-item {
+        padding: var(--spacing-md);
+    }
+    
+    .principle-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.375rem;
+    }
+    
+    .principle-content h4 {
+        font-size: 1rem;
+    }
+    
+    .principle-content p {
+        font-size: 0.9rem;
+    }
+    
+    .common-mistakes {
+        padding: var(--spacing-md);
+    }
+    
+    .common-mistakes h3 {
+        font-size: 1.125rem;
+    }
+    
+    .mistake-card {
+        padding: var(--spacing-md);
+    }
+    
+    .mistake-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .mistake-header h4 {
+        font-size: 0.9rem;
+    }
+    
+    .mistake-content p {
+        font-size: 0.9rem;
+    }
+    
+    .recommendations {
+        padding: var(--spacing-md);
+    }
+    
+    .recommendations h3 {
+        font-size: 1.125rem;
+    }
+    
+    .recommendation-item {
+        padding: var(--spacing-md);
+    }
+    
+    .recommendation-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .recommendation-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .recommendation-content p {
+        font-size: 0.9rem;
+    }
+    
+    .checklist-section {
+        padding: var(--spacing-md);
+    }
+    
+    .checklist-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .checklist-content {
+        padding: var(--spacing-md);
+    }
+    
+    .checklist-item label {
+        font-size: 0.9rem;
+    }
+    
+    .metrics-section {
+        padding: var(--spacing-md);
+    }
+    
+    .metrics-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .metric-card {
+        padding: var(--spacing-md);
+    }
+    
+    .metric-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.375rem;
+    }
+    
+    .metric-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .metric-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .principle-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .principle-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .principle-content p {
+        font-size: 0.85rem;
+    }
+    
+    .mistake-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.125rem;
+    }
+    
+    .mistake-header h4 {
+        font-size: 0.85rem;
+    }
+    
+    .mistake-content p {
+        font-size: 0.85rem;
+    }
+    
+    .recommendation-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .recommendation-content h4 {
+        font-size: 0.85rem;
+    }
+    
+    .recommendation-content p {
+        font-size: 0.85rem;
+    }
+    
+    .checklist-item label {
+        font-size: 0.85rem;
+    }
+    
+    .metric-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .metric-content h4 {
+        font-size: 0.85rem;
+    }
+    
+    .metric-content p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Главные принципы успешного дизайна */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.principle-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.principle-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.principle-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(139, 92, 246, 0.02));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.principle-item:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.principle-item:hover::after {
+    opacity: 1;
+}
+
+.principle-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 
+        0 12px 24px rgba(99, 102, 241, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.principle-item:hover .principle-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 
+        0 16px 32px rgba(99, 102, 241, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.principle-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.principle-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.principle-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Частые ошибки и как их избежать */
+.common-mistakes {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(239, 68, 68, 0.05) 0%, 
+        rgba(220, 38, 38, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(239, 68, 68, 0.1);
+}
+
+.common-mistakes h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.common-mistakes h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--error-color), var(--warning-color));
+    border-radius: 2px;
+}
+
+.mistakes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.mistake-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.mistake-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--error-color), var(--warning-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.mistake-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mistake-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mistake-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--error-color), var(--warning-color));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 
+        0 6px 12px rgba(239, 68, 68, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.mistake-card:hover .mistake-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 8px 16px rgba(239, 68, 68, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mistake-header h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.mistake-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.mistake-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.mistake-content strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Рекомендации для начинающих */
+.recommendations {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(34, 197, 94, 0.05) 0%, 
+        rgba(16, 185, 129, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(34, 197, 94, 0.1);
+}
+
+.recommendations h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.recommendations h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.recommendation-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.recommendation-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.recommendation-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--success-color), var(--accent-color));
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 
+        0 8px 16px rgba(34, 197, 94, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.recommendation-item:hover .recommendation-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 12px 24px rgba(34, 197, 94, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-content {
+    flex: 1;
+}
+
+.recommendation-content h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.recommendation-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Чек-лист для проектов */
+.checklist-section {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(245, 158, 11, 0.05) 0%, 
+        rgba(251, 191, 36, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(245, 158, 11, 0.1);
+}
+
+.checklist-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.checklist-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--warning-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.checklist-content {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.checklist-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--warning-color), var(--accent-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:hover {
+    background: rgba(245, 158, 11, 0.05);
+    border-radius: var(--radius-lg);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--warning-color);
+    cursor: pointer;
+}
+
+.checklist-item label {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Метрики успеха */
+.metrics-section {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.05) 0%, 
+        rgba(139, 92, 246, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(99, 102, 241, 0.1);
+}
+
+.metrics-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.metrics-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.metric-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-lg);
+    box-shadow: 
+        0 12px 24px rgba(99, 102, 241, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-normal);
+}
+
+.metric-card:hover .metric-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 
+        0 16px 32px rgba(99, 102, 241, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.metric-content h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.metric-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}

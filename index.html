@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/UI Дизайн - Полное руководство</title>
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="css/common.css">
+    
+    <!-- Кнопки навигации по секциям -->
+    <link rel="stylesheet" href="css/section-nav.css">
+    
+    <!-- Стили разделов -->
+    <link rel="stylesheet" href="css/sections/01-hero.css">
+    <link rel="stylesheet" href="css/sections/02-stats.css">
+    <link rel="stylesheet" href="css/sections/03-ux-basics.css">
+    <link rel="stylesheet" href="css/sections/04-user-research.css">
+    <link rel="stylesheet" href="css/sections/05-ux-history.css">
+    <link rel="stylesheet" href="css/sections/06-ux-designer.css">
+    <link rel="stylesheet" href="css/sections/07-ui-basics.css">
+    <link rel="stylesheet" href="css/sections/08-ui-tasks.css">
+    <link rel="stylesheet" href="css/sections/09-ui-main-task.css">
+    <link rel="stylesheet" href="css/sections/10-basic-principles.css">
+    <link rel="stylesheet" href="css/sections/11-additional-principles.css">
+    <link rel="stylesheet" href="css/sections/12-ux-ui-difference.css">
+    <link rel="stylesheet" href="css/sections/13-modern-trends.css">
+    <link rel="stylesheet" href="css/sections/14-key-insights.css">
+    <link rel="stylesheet" href="css/sections/15-interactive-test.css">
+    <link rel="stylesheet" href="css/sections/16-learning-path.css">
+    <link rel="stylesheet" href="css/sections/17-overview.css">
+    
+    <!-- Футер -->
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <!-- Кнопки навигации по секциям -->
+    <div class="section-nav" id="section-nav">
+        <button class="section-nav__btn section-nav__btn--up" id="nav-up" title="Предыдущая секция">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="section-nav__btn section-nav__btn--down" id="nav-down" title="Следующая секция">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <i class="fas fa-palette"></i>
+                <span>UX/UI Guide</span>
+            </div>
+            <div class="navbar__menu" id="js-nav-menu">
+                <a href="#home" class="navbar__link navbar__link--active">Главная</a>
+                
+                <div class="navbar__dropdown">
+                    <a href="#ux-basics" class="navbar__link navbar__dropdown-toggle">
+                        UX Основы <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="navbar__dropdown-menu">
+                        <a href="#ux-basics" class="navbar__dropdown-link">Что такое UX</a>
+                        <a href="#user-research" class="navbar__dropdown-link">Понимание пользователя</a>
+                        <a href="#ux-history" class="navbar__dropdown-link">История UX</a>
+                        <a href="#ux-designer" class="navbar__dropdown-link">UX-дизайнер</a>
+                    </div>
+                </div>
+
+                <div class="navbar__dropdown">
+                    <a href="#ui-basics" class="navbar__link navbar__dropdown-toggle">
+                        UI Основы <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="navbar__dropdown-menu">
+                        <a href="#ui-basics" class="navbar__dropdown-link">Что такое UI</a>
+                        <a href="#ui-tasks" class="navbar__dropdown-link">Задачи UI-дизайнера</a>
+                        <a href="#ui-main-task" class="navbar__dropdown-link">Главная задача UI</a>
+                    </div>
+                </div>
+
+                <div class="navbar__dropdown">
+                    <a href="#basic-principles" class="navbar__link navbar__dropdown-toggle">
+                        Принципы <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="navbar__dropdown-menu">
+                        <a href="#basic-principles" class="navbar__dropdown-link">Основные принципы</a>
+                        <a href="#additional-principles" class="navbar__dropdown-link">Дополнительные принципы</a>
+                    </div>
+                </div>
+
+                <div class="navbar__dropdown">
+                    <a href="#ux-ui-difference" class="navbar__link navbar__dropdown-toggle">
+                        Сравнение <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="navbar__dropdown-menu">
+                        <a href="#ux-ui-difference" class="navbar__dropdown-link">Разница UX/UI</a>
+                        <a href="#modern-trends" class="navbar__dropdown-link">Современные тренды</a>
+                    </div>
+                </div>
+
+                <div class="navbar__dropdown">
+                    <a href="#key-insights" class="navbar__link navbar__dropdown-toggle">
+                        Практика <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="navbar__dropdown-menu">
+                        <a href="#key-insights" class="navbar__dropdown-link">Ключевые выводы</a>
+                        <a href="#interactive-test" class="navbar__dropdown-link">Интерактивный тест</a>
+                        <a href="#resources" class="navbar__dropdown-link">Дополнительные ресурсы</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__toggle" id="js-nav-toggle">
+                <span class="navbar__bar"></span>
+                <span class="navbar__bar"></span>
+                <span class="navbar__bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section id="home" class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title--gradient">UX/UI Дизайн</span>
+                    <br>Полное руководство
+                </h1>
+                <p class="hero__subtitle">
+                    Изучите основы пользовательского опыта и интерфейса. 
+                    15 страниц с полным материалом от основ до практики.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#ux-basics" class="btn btn--primary">
+                        <i class="fas fa-play"></i>
+                        Начать изучение
+                    </a>
+                    <a href="#interactive-test" class="btn btn--secondary">
+                        <i class="fas fa-question-circle"></i>
+                        Пройти тест
+                    </a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__card hero__card--1">
+                    <i class="fas fa-user"></i>
+                    <span>UX Research</span>
+                </div>
+                <div class="hero__card hero__card--2">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>UI Design</span>
+                </div>
+                <div class="hero__card hero__card--3">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats">
+        <div class="stats__container">
+            <div class="stats__grid">
+                <div class="stats__item">
+                    <div class="stats__number">15</div>
+                    <div class="stats__label">Страниц</div>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__number">8</div>
+                    <div class="stats__label">Принципов</div>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__number">15</div>
+                    <div class="stats__label">Вопросов</div>
+                </div>
+                <div class="stats__item">
+                    <div class="stats__number">100%</div>
+                    <div class="stats__label">Практика</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Что такое UX -->
+    <section id="ux-basics" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h2 class="main-card__title">Что такое UX-дизайн</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>UX</strong> (англ. <em>user experience</em>) дословно означает <strong>«опыт пользователя»</strong>. 
+                            В более широком смысле это понятие про весь опыт, который получает пользователь при взаимодействии с сайтом или приложением.
+                        </p>
+                    </div>
+                    
+                    <p>
+                        UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. 
+                        Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Пользователь в центре</h3>
+                                <p>Все решения принимаются исходя из потребностей и поведения пользователей</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Эмоции</h3>
+                                <p>Продукт должен вызывать положительные эмоции и создавать приятные воспоминания</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Адаптивность</h3>
+                                <p>Интерфейс работает одинаково хорошо на всех устройствах и платформах</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Функционал</h3>
+                                <p>Продукт должен решать реальные задачи пользователей эффективно</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Понимание пользователя -->
+    <section id="user-research" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2 class="main-card__title">Понимание пользователя</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Цель исследования:</strong> Узнать цели, боли и поведение целевой аудитории, 
+                            чтобы создать продукт, который действительно решает их проблемы.
+                        </p>
+                    </div>
+                    
+                    <div class="research-methods">
+                        <div class="method-card">
+                            <div class="method-header">
+                                <div class="method-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>Интервью</h3>
+                                <span class="method-type">Качественное</span>
+                            </div>
+                            <div class="method-content">
+                                <p><strong>Что это:</strong> Глубокие беседы с пользователями один на один</p>
+                                <p><strong>Когда использовать:</strong> Для понимания мотивации, проблем и контекста использования</p>
+                            </div>
+                        </div>
+                        
+                        <div class="method-card">
+                            <div class="method-header">
+                                <div class="method-icon">
+                                    <i class="fas fa-poll"></i>
+                                </div>
+                                <h3>Опросы</h3>
+                                <span class="method-type">Количественное</span>
+                            </div>
+                            <div class="method-content">
+                                <p><strong>Что это:</strong> Структурированные вопросы для большого количества людей</p>
+                                <p><strong>Когда использовать:</strong> Для получения статистики и валидации гипотез</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: История UX -->
+    <section id="ux-history" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h2 class="main-card__title">История UX</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            Понимание истории UX помогает нам лучше понимать современные принципы дизайна, 
+                            избегать повторения ошибок прошлого и предсказывать будущие тренды.
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-overview">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1970s</div>
+                            <div class="timeline-content">Командная строка</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1980s</div>
+                            <div class="timeline-content">Графический интерфейс</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1990s</div>
+                            <div class="timeline-content">Веб-интерфейсы</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000s</div>
+                            <div class="timeline-content">Мобильные устройства</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2010s</div>
+                            <div class="timeline-content">Сенсорные экраны</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020s</div>
+                            <div class="timeline-content">ИИ и голосовые интерфейсы</div>
+                        </div>
+                    </div>
+                    
+                    <div class="era-content">
+                        <h3>Революция Xerox PARC (1980s)</h3>
+                        <p>
+                            Xerox PARC стал колыбелью современного графического интерфейса. 
+                            Здесь были изобретены многие концепции, которые мы используем до сих пор.
+                        </p>
+                        
+                        <div class="innovations-grid">
+                            <div class="innovation-card">
+                                <div class="innovation-icon">
+                                    🪟
+                                </div>
+                                <h4>Окна</h4>
+                                <p>Концепция перекрывающихся окон для работы с несколькими задачами</p>
+                            </div>
+                            
+                            <div class="innovation-card">
+                                <div class="innovation-icon">
+                                    🖱️
+                                </div>
+                                <h4>Мышь</h4>
+                                <p>Устройство указания, которое сделало взаимодействие интуитивным</p>
+                            </div>
+                            
+                            <div class="innovation-card">
+                                <div class="innovation-icon">
+                                    📁
+                                </div>
+                                <h4>Иконки</h4>
+                                <p>Визуальные представления файлов для быстрого распознавания</p>
+                            </div>
+                            
+                            <div class="innovation-card">
+                                <div class="innovation-icon">
+                                    📋
+                                </div>
+                                <h4>Меню</h4>
+                                <p>Выпадающие списки команд, организованные по категориям</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: UX-дизайнер -->
+    <section id="ux-designer" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h2 class="main-card__title">UX-дизайнер</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>UX-дизайнер</strong> — это инженер-маркетолог, который исследует опыт пользователей: 
+                            изучает аналитику, продумывает связи между элементами интерфейса и их расположение, 
+                            составляет технические задания для редакторов.
+                        </p>
+                    </div>
+                    
+                    <div class="role-responsibilities">
+                        <h3>Роль и обязанности</h3>
+                        <div class="responsibilities-grid">
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Исследование пользователей</h4>
+                                    <p>Проведение интервью, опросов, анализ поведения и создание персон</p>
+                                </div>
+                            </div>
+                            
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Информационная архитектура</h4>
+                                    <p>Структурирование контента и создание логичной навигации</p>
+                                </div>
+                            </div>
+                            
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Прототипирование</h4>
+                                    <p>Создание wireframes и интерактивных прототипов для тестирования</p>
+                                </div>
+                            </div>
+                            
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-vial"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Тестирование</h4>
+                                    <p>Проведение usability тестирования и валидация гипотез</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-competencies">
+                        <h3>Навыки и компетенции</h3>
+                        <div class="skills-categories">
+                            <div class="skill-category">
+                                <h4>Исследовательские навыки</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Интервьюирование</span>
+                                    <span class="skill-tag">Анализ данных</span>
+                                    <span class="skill-tag">Создание персон</span>
+                                    <span class="skill-tag">Карты пользовательского пути</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Дизайн-навыки</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Wireframing</span>
+                                    <span class="skill-tag">Прототипирование</span>
+                                    <span class="skill-tag">Информационная архитектура</span>
+                                    <span class="skill-tag">Usability тестирование</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Мягкие навыки</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Эмпатия</span>
+                                    <span class="skill-tag">Коммуникация</span>
+                                    <span class="skill-tag">Критическое мышление</span>
+                                    <span class="skill-tag">Работа в команде</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="career-path">
+                        <h3>Карьерный путь</h3>
+                        <div class="career-stages">
+                            <div class="career-stage">
+                                <div class="stage-number">1</div>
+                                <div class="stage-content">
+                                    <h4>Junior UX Designer</h4>
+                                    <p>Изучение основ, работа с простыми задачами под руководством</p>
+                                    <div class="stage-salary">$40,000 - $60,000</div>
+                                </div>
+                            </div>
+                            
+                            <div class="career-stage">
+                                <div class="stage-number">2</div>
+                                <div class="stage-content">
+                                    <h4>Middle UX Designer</h4>
+                                    <p>Самостоятельная работа над проектами, проведение исследований</p>
+                                    <div class="stage-salary">$60,000 - $90,000</div>
+                                </div>
+                            </div>
+                            
+                            <div class="career-stage">
+                                <div class="stage-number">3</div>
+                                <div class="stage-content">
+                                    <h4>Senior UX Designer</h4>
+                                    <p>Ведение сложных проектов, менторство, стратегическое планирование</p>
+                                    <div class="stage-salary">$90,000 - $130,000</div>
+                                </div>
+                            </div>
+                            
+                            <div class="career-stage">
+                                <div class="stage-number">4</div>
+                                <div class="stage-content">
+                                    <h4>Lead UX Designer</h4>
+                                    <p>Управление командой, формирование UX-стратегии компании</p>
+                                    <div class="stage-salary">$130,000+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Что такое UI-дизайн -->
+    <section id="ui-basics" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h2 class="main-card__title">Что такое UI-дизайн</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>UI (User Interface)</strong> — это пользовательский интерфейс, то есть все элементы, с которыми взаимодействует пользователь: кнопки, формы, меню, иконки и другие визуальные компоненты.
+                        </p>
+                    </div>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Визуальное представление</h3>
+                                <p>UI-дизайнер создает визуальный облик продукта, определяя цвета, шрифты, размеры элементов и их расположение</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Адаптивность</h3>
+                                <p>Интерфейс должен корректно отображаться на всех устройствах: компьютерах, планшетах и смартфонах</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Цветовая палитра</h3>
+                                <p>Правильный выбор цветов влияет на восприятие бренда и удобство использования интерфейса</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Типографика</h3>
+                                <p>Шрифты должны быть читаемыми и соответствовать стилю продукта, создавая иерархию информации</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Примеры UI-элементов:</h3>
+                        <ul>
+                            <li><strong>Кнопки</strong> — для выполнения действий (отправить, сохранить, отменить)</li>
+                            <li><strong>Формы</strong> — для ввода данных (регистрация, поиск, обратная связь)</li>
+                            <li><strong>Навигация</strong> — меню, хлебные крошки, пагинация</li>
+                            <li><strong>Модальные окна</strong> — всплывающие окна для важных действий</li>
+                            <li><strong>Карточки</strong> — для отображения контента (товары, статьи, профили)</li>
+                        </ul>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "UI-дизайн — это мост между человеком и технологией. Хороший интерфейс делает сложные процессы простыми и понятными."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Задачи UI-дизайнера -->
+    <section id="ui-tasks" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h2 class="main-card__title">Задачи UI-дизайнера</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>UI-дизайнер</strong> — это специалист, который визуализирует рабочий прототип, отрисовывает кнопки, иконки, формы и другие компоненты интерфейса, собирая их в гармоничный работающий макет.
+                        </p>
+                    </div>
+
+                    <div class="responsibilities">
+                        <h3>Основные задачи UI-дизайнера</h3>
+                        <div class="responsibilities-grid">
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Создание дизайн-системы</h4>
+                                    <p>Разработка единой системы компонентов, цветов, шрифтов и стилей для обеспечения консистентности продукта</p>
+                                </div>
+                            </div>
+
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Адаптивный дизайн</h4>
+                                    <p>Создание интерфейсов, которые корректно отображаются на всех устройствах и размерах экранов</p>
+                                </div>
+                            </div>
+
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Анимации и микро-взаимодействия</h4>
+                                    <p>Добавление анимаций для улучшения пользовательского опыта и обратной связи</p>
+                                </div>
+                            </div>
+
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Тестирование интерфейсов</h4>
+                                    <p>Проверка работоспособности и удобства использования созданных интерфейсов</p>
+                                </div>
+                            </div>
+
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Handoff разработчикам</h4>
+                                    <p>Передача готовых макетов и спецификаций команде разработки для реализации</p>
+                                </div>
+                            </div>
+
+                            <div class="responsibility-item">
+                                <div class="responsibility-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="responsibility-content">
+                                    <h4>Визуальное оформление</h4>
+                                    <p>Определение цветовой палитры, типографики, иконографии и общего стиля продукта</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-steps">
+                        <h3>Процесс работы UI-дизайнера</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="process-step__number">1</div>
+                                <div class="step-content">
+                                    <h4>Анализ требований</h4>
+                                    <p>Изучение технического задания и понимание целей проекта</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="process-step__number">2</div>
+                                <div class="step-content">
+                                    <h4>Создание wireframes</h4>
+                                    <p>Разработка структурной схемы интерфейса без детального оформления</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="process-step__number">3</div>
+                                <div class="step-content">
+                                    <h4>Визуальное оформление</h4>
+                                    <p>Добавление цветов, шрифтов, иконок и других визуальных элементов</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="process-step__number">4</div>
+                                <div class="step-content">
+                                    <h4>Прототипирование</h4>
+                                    <p>Создание интерактивного прототипа для демонстрации функциональности</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="process-step__number">5</div>
+                                <div class="step-content">
+                                    <h4>Тестирование и итерации</h4>
+                                    <p>Проверка дизайна и внесение улучшений на основе обратной связи</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tools-section">
+                        <h3>Инструменты UI-дизайнера</h3>
+                        <div class="step-tools">
+                            <span class="tool-tag">Figma</span>
+                            <span class="tool-tag">Sketch</span>
+                            <span class="tool-tag">Adobe XD</span>
+                            <span class="tool-tag">InVision</span>
+                            <span class="tool-tag">Principle</span>
+                            <span class="tool-tag">Framer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Главная задача UI -->
+    <section id="ui-main-task" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2 class="main-card__title">Главная задача UI</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Главная задача UI-дизайнера</strong> — помочь пользователю быстро и без стресса понять, как пользоваться продуктом: сайтом, приложением, программой, платёжным терминалом, микроволновкой или пультом от телевизора.
+                        </p>
+                    </div>
+
+                    <div class="goals-visual">
+                        <h3>Ключевые цели UI-дизайна</h3>
+                        <div class="goals-visual">
+                            <div class="goal-step">
+                                <div class="goal-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="goal-content">
+                                    <h4>Интуитивность</h4>
+                                    <p>Интерфейс должен быть понятен без обучения</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-arrow">→</div>
+
+                            <div class="goal-step">
+                                <div class="goal-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="goal-content">
+                                    <h4>Снижение когнитивной нагрузки</h4>
+                                    <p>Минимизация усилий для понимания интерфейса</p>
+                                </div>
+                            </div>
+
+                            <div class="goal-arrow">→</div>
+
+                            <div class="goal-step">
+                                <div class="goal-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="goal-content">
+                                    <h4>Достижение целей</h4>
+                                    <p>Пользователь легко выполняет нужные действия</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="importance-grid">
+                        <h3>Принципы эффективного UI</h3>
+                        <div class="importance-grid">
+                            <div class="importance-item">
+                                <div class="importance-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="importance-content">
+                                    <h4>Визуальная иерархия</h4>
+                                    <p>Важные элементы должны привлекать внимание первыми</p>
+                                </div>
+                            </div>
+
+                            <div class="importance-item">
+                                <div class="importance-icon">
+                                    <i class="fas fa-sync"></i>
+                                </div>
+                                <div class="importance-content">
+                                    <h4>Обратная связь</h4>
+                                    <p>Пользователь должен понимать результат своих действий</p>
+                                </div>
+                            </div>
+
+                            <div class="importance-item">
+                                <div class="importance-icon">
+                                    <i class="fas fa-universal-access"></i>
+                                </div>
+                                <div class="importance-content">
+                                    <h4>Доступность (Accessibility)</h4>
+                                    <p>Интерфейс должен быть доступен для всех пользователей</p>
+                                </div>
+                            </div>
+
+                            <div class="importance-item">
+                                <div class="importance-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="importance-content">
+                                    <h4>Производительность</h4>
+                                    <p>Быстрая загрузка и отзывчивость интерфейса</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>Примеры хорошего UI:</h3>
+                        <ul>
+                            <li><strong>Кнопка "Купить"</strong> — яркая, заметная, с понятным текстом</li>
+                            <li><strong>Форма регистрации</strong> — простая, с подсказками и валидацией</li>
+                            <li><strong>Навигационное меню</strong> — логично структурированное и легко доступное</li>
+                            <li><strong>Поиск</strong> — с автодополнением и фильтрами</li>
+                            <li><strong>Обратная связь</strong> — уведомления о статусе действий</li>
+                        </ul>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "Хороший UI — это не просто красивая картинка. Это инструмент, который помогает пользователю достичь своей цели с минимальными усилиями."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основные принципы -->
+    <section id="basic-principles" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h2 class="main-card__title">Основные принципы</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Основные принципы качественного UX/UI-дизайна</strong> — это фундаментальные правила, которые обеспечивают создание удобных, понятных и эффективных интерфейсов.
+                        </p>
+                    </div>
+
+                    <div class="principles-intro">
+                        <h3>Четыре ключевых принципа</h3>
+                        <div class="intro-card">
+                            <p>Эти принципы являются основой для создания интерфейсов, которые пользователи любят и которыми легко пользуются.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-example">
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3>Ясность (Clarity)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> В интерфейсе нет двусмысленности, а текст и структура направляют пользователя к цели.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Понятные названия кнопок: "Купить", "Зарегистрироваться", "Отправить"</li>
+                                        <li>Четкая навигация с логичной структурой</li>
+                                        <li>Информативные сообщения об ошибках</li>
+                                        <li>Понятные иконки без дополнительных объяснений</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-compress-arrows-alt"></i>
+                                </div>
+                                <h3>Лаконичность (Simplicity)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Интерфейс не перегружен подсказками, всплывающими окнами и анимацией. Задавайте себе вопросы: «А нужно ли это здесь? Для чего?»</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Минималистичный дизайн без лишних элементов</li>
+                                        <li>Фокус на главной задаче пользователя</li>
+                                        <li>Удаление ненужных функций и кнопок</li>
+                                        <li>Простая цветовая палитра</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3>Узнаваемость (Recognition)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Элементы дизайна легко распознать, даже если пользователь видит ваш сайт впервые. Делайте интерфейс интуитивно понятным.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Кнопка подтверждения — зеленая (как на большинстве сайтов)</li>
+                                        <li>Кнопка отмены — красная или серая</li>
+                                        <li>Иконка корзины для покупок</li>
+                                        <li>Стандартные иконки: дом для главной, лупа для поиска</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Отзывчивость (Responsiveness)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Хороший интерфейс реагирует на действия пользователя мгновенно. Он должен понимать, что происходит на экране прямо сейчас.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Мгновенная реакция на клик кнопки</li>
+                                        <li>Индикаторы загрузки для долгих операций</li>
+                                        <li>Подтверждение успешных действий</li>
+                                        <li>Визуальная обратная связь при наведении</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="principles-summary">
+                        <h3>Практическое применение</h3>
+                        <div class="summary-card">
+                            <p>Эти принципы работают в комплексе. Например, ясная кнопка "Купить" (ясность) должна быть зеленой (узнаваемость), не перегружать страницу (лаконичность) и мгновенно реагировать на клик (отзывчивость).</p>
+                        </div>
+                    </div>
+
+                    <div class="application-steps">
+                        <h3>Как применять принципы</h3>
+                        <div class="application-steps__container">
+                            <div class="application-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Анализ</h4>
+                                    <p>Определите главную цель пользователя на каждой странице</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Упрощение</h4>
+                                    <p>Уберите все, что не помогает достичь этой цели</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Стандартизация</h4>
+                                    <p>Используйте привычные пользователям элементы</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Тестирование</h4>
+                                    <p>Проверьте скорость реакции интерфейса</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительные принципы -->
+    <section id="additional-principles" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h2 class="main-card__title">Дополнительные принципы</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Дополнительные принципы UX/UI-дизайна</strong> — это правила, которые дополняют основные принципы и помогают создать по-настоящему качественный пользовательский опыт.
+                        </p>
+                    </div>
+
+                    <div class="principles-intro">
+                        <h3>Четыре дополнительных принципа</h3>
+                        <div class="intro-card">
+                            <p>Эти принципы обеспечивают профессиональный уровень дизайна и создают доверие пользователей к продукту.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-example">
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-sync"></i>
+                                </div>
+                                <h3>Постоянство (Consistency)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Соблюдайте постоянство для всех разделов сайта и приложения. Элементы интерфейса — меню и слайдеры — должны вести себя одинаково на любой странице.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Одинаковые кнопки на всех страницах</li>
+                                        <li>Единая цветовая схема во всем приложении</li>
+                                        <li>Консистентная навигация</li>
+                                        <li>Одинаковые шрифты и размеры текста</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h3>Эстетика (Aesthetics)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Создавайте интерфейс визуально привлекательным, чтобы пользователю было приятно работать, ничто его не раздражало и не отвлекало от решения задач.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Гармоничная цветовая палитра</li>
+                                        <li>Красивая типографика</li>
+                                        <li>Правильные пропорции элементов</li>
+                                        <li>Качественные изображения и иконки</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3>Эффективность (Efficiency)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Помимо внешней привлекательности хороший интерфейс экономит время пользователя и доставляет его в нужную точку с минимальными усилиями.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Быстрый доступ к часто используемым функциям</li>
+                                        <li>Автозаполнение форм</li>
+                                        <li>Горячие клавиши для опытных пользователей</li>
+                                        <li>Минимум кликов для достижения цели</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-header">
+                                <div class="principle-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Снисходительность (Forgiveness)</h3>
+                            </div>
+                            <div class="principle-content">
+                                <p><strong>Определение:</strong> Даже при самом продуманном интерфейсе ни один пользователь не застрахован от ошибки. Продумайте заботливые сообщения на случай, если что-то пошло не так.</p>
+                                <div class="principle-examples">
+                                    <h4>Примеры:</h4>
+                                    <ul>
+                                        <li>Возможность отменить действие</li>
+                                        <li>Понятные сообщения об ошибках</li>
+                                        <li>Автосохранение данных</li>
+                                        <li>Подтверждение критических действий</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="principles-summary">
+                        <h3>Взаимосвязь принципов</h3>
+                        <div class="summary-card">
+                            <p>Все принципы работают вместе. Например, красивая кнопка (эстетика) должна быть в том же стиле на всех страницах (постоянство), помогать быстро выполнить задачу (эффективность) и позволять отменить действие (снисходительность).</p>
+                        </div>
+                    </div>
+
+                    <div class="application-steps">
+                        <h3>Практические советы</h3>
+                        <div class="application-steps__container">
+                            <div class="application-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Создайте дизайн-систему</h4>
+                                    <p>Зафиксируйте все элементы интерфейса в едином стиле</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Тестируйте на пользователях</h4>
+                                    <p>Проверяйте, как люди взаимодействуют с интерфейсом</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Анализируйте метрики</h4>
+                                    <p>Отслеживайте время выполнения задач и количество ошибок</p>
+                                </div>
+                            </div>
+
+                            <div class="application-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Итеративно улучшайте</h4>
+                                    <p>Постоянно совершенствуйте интерфейс на основе обратной связи</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "Хороший дизайн — это не только красота, но и забота о пользователе. Каждый элемент должен служить цели и помогать людям."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Разница UX/UI -->
+    <section id="ux-ui-difference" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h2 class="main-card__title">Разница UX/UI</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Разница между UX и UI</strong> — в том, что UX-дизайнер планирует, как пользователь взаимодействует с интерфейсом, какие шаги ему нужно предпринять, чтобы достичь цели. А UI-дизайнер продумывает, как эти шаги и путь к цели выглядят.
+                        </p>
+                    </div>
+
+                    <div class="comparison-container">
+                        <div class="comparison-card">
+                            <div class="comparison-header">
+                                <div class="comparison-icon comparison-icon--ux">
+                                    🧠
+                                </div>
+                                <h3>UX, USER EXPERIENCE</h3>
+                            </div>
+                            <div class="comparison-content">
+                                <p><strong>Пользовательский опыт</strong> — это впечатления пользователя от взаимодействия с интерфейсом.</p>
+                                <div class="comparison-details">
+                                    <h4>Что делает UX-дизайнер:</h4>
+                                    <ul>
+                                        <li>Работает с абстрактной информацией: схемами, таблицами, данными</li>
+                                        <li>Проектирует интерфейс сайта, приложения или программы</li>
+                                        <li>Изучает потребности пользователей</li>
+                                        <li>Строит логические схемы работы интерфейса</li>
+                                        <li>Тестирует прототипы на целевой аудитории</li>
+                                        <li>Составляет техническое задание для UI-дизайнера</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-card">
+                            <div class="comparison-header">
+                                <div class="comparison-icon comparison-icon--ui">
+                                    🎨
+                                </div>
+                                <h3>UI, USER INTERFACE</h3>
+                            </div>
+                            <div class="comparison-content">
+                                <p><strong>Пользовательский интерфейс</strong> — это конечный результат работы дизайнера, то, что увидит пользователь.</p>
+                                <div class="comparison-details">
+                                    <h4>Что делает UI-дизайнер:</h4>
+                                    <ul>
+                                        <li>Визуализирует пользовательский опыт</li>
+                                        <li>"Оживляет" интерфейс продукта</li>
+                                        <li>Определяет цветовую палитру и расположение объектов</li>
+                                        <li>Отрисовывает кнопки, иконки, формы</li>
+                                        <li>Собирает компоненты в гармоничный макет</li>
+                                        <li>Создает интерфейс на основе пользовательского опыта</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relationship-section">
+                        <h3>Взаимосвязь и синергия</h3>
+                        <div class="relationship-content">
+                            <p>На деле UX и UI так тесно связаны, что иногда грань между понятиями размывается. Поэтому обычно проектированием интерфейсов занимается один дизайнер и его профессия пишется через слеш: <strong>UX/UI-дизайнер</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-steps">
+                        <h3>Процесс совместной работы</h3>
+                        <div class="workflow-steps__container">
+                            <div class="workflow-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>UX: Исследование</h4>
+                                    <p>Изучение пользователей, их потребностей и поведения</p>
+                                </div>
+                            </div>
+
+                            <div class="workflow-arrow">→</div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>UX: Прототипирование</h4>
+                                    <p>Создание схем и wireframes будущего интерфейса</p>
+                                </div>
+                            </div>
+
+                            <div class="workflow-arrow">→</div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>UI: Визуализация</h4>
+                                    <p>Оформление прототипа цветами, шрифтами и элементами</p>
+                                </div>
+                            </div>
+
+                            <div class="workflow-arrow">→</div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>UI: Детализация</h4>
+                                    <p>Создание финальных макетов и передача разработчикам</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="examples-section">
+                        <h3>Примеры различий</h3>
+                        <div class="examples-grid">
+                            <div class="example-card">
+                                <div class="example-header">
+                                    <div class="example-icon">
+                                        🛒
+                                    </div>
+                                    <h4>E-commerce сайт</h4>
+                                </div>
+                                <div class="example-content">
+                                    <p><strong>UX:</strong> Как пользователь найдет товар? Сколько кликов до покупки?</p>
+                                    <p><strong>UI:</strong> Как выглядит кнопка "Купить"? Какой цвет у корзины?</p>
+                                </div>
+                            </div>
+
+                            <div class="example-card">
+                                <div class="example-header">
+                                    <div class="example-icon">
+                                        📱
+                                    </div>
+                                    <h4>Мобильное приложение</h4>
+                                </div>
+                                <div class="example-content">
+                                    <p><strong>UX:</strong> Какие функции нужны? Как организовать навигацию?</p>
+                                    <p><strong>UI:</strong> Как выглядят иконки? Какой стиль анимаций?</p>
+                                </div>
+                            </div>
+
+                            <div class="example-card">
+                                <div class="example-header">
+                                    <div class="example-icon">
+                                        📧
+                                    </div>
+                                    <h4>Форма регистрации</h4>
+                                </div>
+                                <div class="example-content">
+                                    <p><strong>UX:</strong> Какие поля обязательны? Как упростить процесс?</p>
+                                    <p><strong>UI:</strong> Как выглядят поля ввода? Как показать ошибки?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "UX — это ощущения, UI — это внешний вид. Хороший дизайн решает проблемы пользователей и приносит прибыль бизнесу."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Современные тренды -->
+    <section id="modern-trends" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2 class="main-card__title">Современные тренды</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Современные тренды в UX/UI-дизайне</strong> — это актуальные направления и технологии, которые формируют будущее интерфейсов и пользовательского опыта.
+                        </p>
+                    </div>
+
+                    <div class="trends-intro">
+                        <h3>Ключевые тренды 2024-2025</h3>
+                        <div class="intro-card">
+                            <p>Эти тренды определяют, как будут выглядеть и работать интерфейсы в ближайшие годы.</p>
+                        </div>
+                    </div>
+
+                    <div class="trends-grid">
+                        <div class="trend-card">
+                            <div class="trend-header">
+                                <div class="trend-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <h3>Неоморфизм/Glassmorphism</h3>
+                            </div>
+                            <div class="trend-content">
+                                <p><strong>Описание:</strong> Объемные, стеклянные элементы с эффектом матового стекла и мягкими тенями.</p>
+                                <div class="trend-examples">
+                                    <h4>Примеры применения:</h4>
+                                    <ul>
+                                        <li>Карточки с полупрозрачным фоном</li>
+                                        <li>Кнопки с объемным эффектом</li>
+                                        <li>Модальные окна с размытием фона</li>
+                                        <li>Навигационные элементы</li>
+                                    </ul>
+                                </div>
+                                <div class="trend-benefits">
+                                    <h4>Преимущества:</h4>
+                                    <p>Создает ощущение глубины и современности, улучшает визуальную иерархию</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-card">
+                            <div class="trend-header">
+                                <div class="trend-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>AI и персонализация</h3>
+                            </div>
+                            <div class="trend-content">
+                                <p><strong>Описание:</strong> Интерфейсы, которые подстраиваются под пользователя с помощью искусственного интеллекта.</p>
+                                <div class="trend-examples">
+                                    <h4>Примеры применения:</h4>
+                                    <ul>
+                                        <li>Адаптивные рекомендации</li>
+                                        <li>Персонализированные дашборды</li>
+                                        <li>Умные формы с автозаполнением</li>
+                                        <li>Динамический контент</li>
+                                    </ul>
+                                </div>
+                                <div class="trend-benefits">
+                                    <h4>Преимущества:</h4>
+                                    <p>Повышает вовлеченность и удовлетворенность пользователей</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-card">
+                            <div class="trend-header">
+                                <div class="trend-icon">
+                                    <i class="fas fa-universal-access"></i>
+                                </div>
+                                <h3>Доступность (A11y)</h3>
+                            </div>
+                            <div class="trend-content">
+                                <p><strong>Описание:</strong> Дизайн для каждого — создание интерфейсов, доступных для людей с ограниченными возможностями.</p>
+                                <div class="trend-examples">
+                                    <h4>Примеры применения:</h4>
+                                    <ul>
+                                        <li>Высокий контраст цветов</li>
+                                        <li>Поддержка скрин-ридеров</li>
+                                        <li>Навигация с клавиатуры</li>
+                                        <li>Альтернативный текст для изображений</li>
+                                    </ul>
+                                </div>
+                                <div class="trend-benefits">
+                                    <h4>Преимущества:</h4>
+                                    <p>Расширяет аудиторию и соответствует этическим стандартам</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trend-card">
+                            <div class="trend-header">
+                                <div class="trend-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <h3>Микро-анимации</h3>
+                            </div>
+                            <div class="trend-content">
+                                <p><strong>Описание:</strong> Небольшие анимации для обратной связи и улучшения пользовательского опыта.</p>
+                                <div class="trend-examples">
+                                    <h4>Примеры применения:</h4>
+                                    <ul>
+                                        <li>Анимация загрузки</li>
+                                        <li>Переходы между страницами</li>
+                                        <li>Обратная связь при взаимодействии</li>
+                                        <li>Индикаторы прогресса</li>
+                                    </ul>
+                                </div>
+                                <div class="trend-benefits">
+                                    <h4>Преимущества:</h4>
+                                    <p>Делает интерфейс более живым и отзывчивым</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emerging-trends">
+                        <h3>Перспективные направления</h3>
+                        <div class="emerging-trends-grid">
+                            <div class="emerging-trend">
+                                <div class="emerging-icon">
+                                    🎤
+                                </div>
+                                <div class="emerging-content">
+                                    <h4>Voice UI</h4>
+                                    <p>Голосовые интерфейсы для управления приложениями</p>
+                                </div>
+                            </div>
+
+                            <div class="emerging-trend">
+                                <div class="emerging-icon">
+                                    🥽
+                                </div>
+                                <div class="emerging-content">
+                                    <h4>AR/VR интерфейсы</h4>
+                                    <p>Дизайн для дополненной и виртуальной реальности</p>
+                                </div>
+                            </div>
+
+                            <div class="emerging-trend">
+                                <div class="emerging-icon">
+                                    📱
+                                </div>
+                                <div class="emerging-content">
+                                    <h4>Mobile-first</h4>
+                                    <p>Приоритет мобильных устройств в дизайне</p>
+                                </div>
+                            </div>
+
+                            <div class="emerging-trend">
+                                <div class="emerging-icon">
+                                    🌱
+                                </div>
+                                <div class="emerging-content">
+                                    <h4>Экологичный дизайн</h4>
+                                    <p>Фокус на устойчивости и энергоэффективности</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="future-section">
+                        <h3>Будущее интерфейсов</h3>
+                        <div class="future-content">
+                            <p>Интерфейсы будущего будут еще более интуитивными, персонализированными и интегрированными в повседневную жизнь. Ключевые направления развития:</p>
+                            <ul>
+                                <li><strong>Бесшовная интеграция</strong> — интерфейсы станут невидимыми, работая в фоне</li>
+                                <li><strong>Эмоциональный дизайн</strong> — интерфейсы будут реагировать на эмоции пользователя</li>
+                                <li><strong>Коллаборативные интерфейсы</strong> — совместная работа в реальном времени</li>
+                                <li><strong>Биометрическая аутентификация</strong> — безопасность через биометрию</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "Тренды приходят и уходят, но хороший дизайн остается. Главное — создавать интерфейсы, которые решают реальные проблемы пользователей."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые выводы -->
+    <section id="key-insights" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h2 class="main-card__title">Ключевые выводы</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Главные принципы успешного UX/UI-дизайна</strong> — это фундаментальные истины, которые должен знать каждый дизайнер для создания качественных интерфейсов.
+                        </p>
+                    </div>
+
+                    <div class="insights-intro">
+                        <h3>Что нужно запомнить</h3>
+                        <div class="intro-card">
+                            <p>Эти выводы основаны на многолетнем опыте работы с пользователями и являются основой профессионального дизайна.</p>
+                        </div>
+                    </div>
+
+                    <div class="key-principles">
+                        <h3>Главные принципы успешного дизайна</h3>
+                        <div class="principles-grid">
+                            <div class="principle-item">
+                                <div class="principle-icon">
+                                    👥
+                                </div>
+                                <div class="principle-content">
+                                    <h4>UX — это ощущения, UI — это внешний вид</h4>
+                                    <p>Пользовательский опыт формируется через взаимодействие, а интерфейс — это визуальное представление этого опыта.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item">
+                                <div class="principle-icon">
+                                    📈
+                                </div>
+                                <div class="principle-content">
+                                    <h4>Хороший дизайн решает проблемы пользователей и приносит прибыль бизнесу</h4>
+                                    <p>Успешный дизайн должен удовлетворять потребности пользователей и достигать бизнес-целей.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item">
+                                <div class="principle-icon">
+                                    🔍
+                                </div>
+                                <div class="principle-content">
+                                    <h4>Основа успеха — исследование, прототипирование и тестирование</h4>
+                                    <p>Качественный дизайн создается через итеративный процесс изучения пользователей.</p>
+                                </div>
+                            </div>
+
+                            <div class="principle-item">
+                                <div class="principle-icon">
+                                    ⚙️
+                                </div>
+                                <div class="principle-content">
+                                    <h4>Дизайн — это не про искусство, а про функциональность и ясность</h4>
+                                    <p>Красота важна, но главное — чтобы интерфейс работал и был понятен пользователю.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="common-mistakes">
+                        <h3>Частые ошибки и как их избежать</h3>
+                        <div class="mistakes-grid">
+                            <div class="mistake-card">
+                                <div class="mistake-header">
+                                    <div class="mistake-icon">
+                                        ❌
+                                    </div>
+                                    <h4>Ошибка: Дизайн без исследования</h4>
+                                </div>
+                                <div class="mistake-content">
+                                    <p><strong>Проблема:</strong> Создание интерфейса на основе предположений</p>
+                                    <p><strong>Решение:</strong> Всегда начинайте с изучения пользователей и их потребностей</p>
+                                </div>
+                            </div>
+
+                            <div class="mistake-card">
+                                <div class="mistake-header">
+                                    <div class="mistake-icon">
+                                        ❌
+                                    </div>
+                                    <h4>Ошибка: Игнорирование принципов</h4>
+                                </div>
+                                <div class="mistake-content">
+                                    <p><strong>Проблема:</strong> Нарушение основных принципов UX/UI</p>
+                                    <p><strong>Решение:</strong> Следуйте принципам ясности, лаконичности, узнаваемости и отзывчивости</p>
+                                </div>
+                            </div>
+
+                            <div class="mistake-card">
+                                <div class="mistake-header">
+                                    <div class="mistake-icon">
+                                        ❌
+                                    </div>
+                                    <h4>Ошибка: Отсутствие тестирования</h4>
+                                </div>
+                                <div class="mistake-content">
+                                    <p><strong>Проблема:</strong> Не проверяете дизайн на реальных пользователях</p>
+                                    <p><strong>Решение:</strong> Регулярно тестируйте интерфейс и собирайте обратную связь</p>
+                                </div>
+                            </div>
+
+                            <div class="mistake-card">
+                                <div class="mistake-header">
+                                    <div class="mistake-icon">
+                                        ❌
+                                    </div>
+                                    <h4>Ошибка: Фокус только на визуале</h4>
+                                </div>
+                                <div class="mistake-content">
+                                    <p><strong>Проблема:</strong> Забываете про функциональность и удобство</p>
+                                    <p><strong>Решение:</strong> Балансируйте красоту с практичностью</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommendations">
+                        <h3>Рекомендации для начинающих</h3>
+                        <div class="recommendations-list">
+                            <div class="recommendation-item">
+                                <div class="recommendation-number">1</div>
+                                <div class="recommendation-content">
+                                    <h4>Изучайте пользователей</h4>
+                                    <p>Проводите интервью, опросы, анализируйте поведение. Пользователи — ваш главный источник истины.</p>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item">
+                                <div class="recommendation-number">2</div>
+                                <div class="recommendation-content">
+                                    <h4>Начинайте с простого</h4>
+                                    <p>Не усложняйте интерфейс. Лучше простой и понятный дизайн, чем сложный и красивый.</p>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item">
+                                <div class="recommendation-number">3</div>
+                                <div class="recommendation-content">
+                                    <h4>Тестируйте постоянно</h4>
+                                    <p>Проверяйте свои решения на реальных пользователях. Данные важнее мнений.</p>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item">
+                                <div class="recommendation-number">4</div>
+                                <div class="recommendation-content">
+                                    <h4>Изучайте лучшие практики</h4>
+                                    <p>Анализируйте успешные продукты, изучайте дизайн-системы крупных компаний.</p>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item">
+                                <div class="recommendation-number">5</div>
+                                <div class="recommendation-content">
+                                    <h4>Развивайте эмпатию</h4>
+                                    <p>Ставьте себя на место пользователя. Понимание их проблем — ключ к хорошему дизайну.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checklist-section">
+                        <h3>Чек-лист для проектов</h3>
+                        <div class="checklist-content">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check1" checked>
+                                <label for="check1">Проведено исследование пользователей</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check2" checked>
+                                <label for="check2">Созданы персоны и пользовательские сценарии</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check3" checked>
+                                <label for="check3">Разработана информационная архитектура</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check4" checked>
+                                <label for="check4">Созданы wireframes и прототипы</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check5" checked>
+                                <label for="check5">Проведено тестирование с пользователями</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check6" checked>
+                                <label for="check6">Интерфейс соответствует принципам доступности</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-section">
+                        <h3>Метрики успеха</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    ⏰
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Время выполнения задач</h4>
+                                    <p>Пользователи должны быстро достигать своих целей</p>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    ✅
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Успешность выполнения</h4>
+                                    <p>Процент пользователей, которые успешно завершают задачи</p>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    😊
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Удовлетворенность пользователей</h4>
+                                    <p>Насколько пользователи довольны интерфейсом</p>
+                                </div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    🔄
+                                </div>
+                                <div class="metric-content">
+                                    <h4>Возвращаемость</h4>
+                                    <p>Как часто пользователи возвращаются к продукту</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "Помните: хороший дизайн — это не то, что нравится дизайнеру, а то, что помогает пользователю решить его задачу."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Интерактивный тест -->
+    <section id="interactive-test" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h2 class="main-card__title">Интерактивный тест</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="test-description">
+                        <h3>Проверьте свои знания</h3>
+                        <p>Этот тест поможет вам закрепить изученный материал и проверить понимание основ UX/UI-дизайна.</p>
+                        
+                        <div class="test-info">
+                            <div class="test-info-item">
+                                📝
+                                <span>15 вопросов</span>
+                            </div>
+                            <div class="test-info-item">
+                                ⏰
+                                <span>10-15 минут</span>
+                            </div>
+                            <div class="test-info-item">
+                                🎓
+                                <span>Сертификат по завершении</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-topics">
+                        <h3>Темы теста:</h3>
+                        <div class="topics-grid">
+                            <div class="topic-item">
+                                💡
+                                <span>Основы UX/UI</span>
+                            </div>
+                            <div class="topic-item">
+                                👥
+                                <span>Исследование пользователей</span>
+                            </div>
+                            <div class="topic-item">
+                                ⭐
+                                <span>Принципы дизайна</span>
+                            </div>
+                            <div class="topic-item">
+                                ⚖️
+                                <span>Разница UX/UI</span>
+                            </div>
+                            <div class="topic-item">
+                                🚀
+                                <span>Современные тренды</span>
+                            </div>
+                            <div class="topic-item">
+                                🔧
+                                <span>Инструменты и методы</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-container" id="test-container">
+                        <div class="test-start" id="test-start">
+                            <div class="start-content">
+                                <h3>Готовы начать тест?</h3>
+                                <p>Нажмите кнопку ниже, чтобы проверить свои знания по UX/UI-дизайну</p>
+                                <button class="btn btn--primary" id="start-test-btn">
+                                    <i class="fas fa-play"></i>
+                                    Начать тест
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="test-question" id="test-question" style="display: none;">
+                            <div class="question-header">
+                                <div class="question-progress">
+                                    <span id="question-number">1</span> из <span id="total-questions">15</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="question-content">
+                                <h3 id="question-text">Вопрос</h3>
+                                <div class="options-container" id="options-container">
+                                    <!-- Опции будут добавлены динамически -->
+                                </div>
+                            </div>
+                            
+                            <div class="question-navigation">
+                                <button class="btn btn--secondary" id="prev-btn" disabled>
+                                    <i class="fas fa-arrow-left"></i>
+                                    Предыдущий
+                                </button>
+                                <button class="btn btn--primary" id="next-btn" disabled>
+                                    Следующий
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="test-results" id="test-results" style="display: none;">
+                            <div class="results-content">
+                                <div class="results-header">
+                                    <div class="results-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h3>Тест завершен!</h3>
+                                </div>
+                                
+                                <div class="results-score">
+                                    <div class="score-circle">
+                                        <span id="final-score">0</span>%
+                                    </div>
+                                    <p>Ваш результат</p>
+                                </div>
+                                
+                                <div class="results-details">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Правильных ответов:</span>
+                                        <span class="detail-value" id="correct-answers">0</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Неправильных ответов:</span>
+                                        <span class="detail-value" id="wrong-answers">0</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Время прохождения:</span>
+                                        <span class="detail-value" id="test-time">0:00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="results-message" id="results-message">
+                                    <!-- Сообщение будет добавлено динамически -->
+                                </div>
+                                
+                                <div class="results-actions">
+                                    <button class="btn btn--primary" id="retake-btn">
+                                        <i class="fas fa-redo"></i>
+                                        Пройти заново
+                                    </button>
+                                    <button class="btn btn--secondary" id="review-btn">
+                                        <i class="fas fa-eye"></i>
+                                        Просмотреть ответы
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-tips">
+                        <h3>Советы для успешного прохождения:</h3>
+                        <ul>
+                            <li>Внимательно читайте каждый вопрос</li>
+                            <li>Не торопитесь с ответами</li>
+                            <li>Используйте логику и знания из курса</li>
+                            <li>Если не знаете ответ, выберите наиболее логичный вариант</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительные ресурсы -->
+    <section id="resources" class="content-section">
+        <div class="main-content__container">
+            <div class="main-card">
+                <div class="main-card__header">
+                    <div class="main-card__icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h2 class="main-card__title">Дополнительные ресурсы</h2>
+                </div>
+                <div class="main-card__content">
+                    <div class="definition-box">
+                        <p class="lead">
+                            <strong>Дополнительные ресурсы</strong> — это материалы для углубленного изучения UX/UI-дизайна, которые помогут вам развиваться в профессии и оставаться в курсе современных тенденций.
+                        </p>
+                    </div>
+
+                    <div class="resources-intro">
+                        <h3>Продолжайте обучение</h3>
+                        <div class="intro-card">
+                            <p>Эти ресурсы помогут вам углубить знания и развить практические навыки в области UX/UI-дизайна.</p>
+                        </div>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    📚
+                                </div>
+                                <h3>Книги и статьи</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>"Не заставляйте меня думать" - Стив Круг</h4>
+                                    <p>Классика веб-юзабилити, объясняющая принципы интуитивного дизайна</p>
+                                    <a href="#" class="resource-link">Читать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>"Дизайн привычных вещей" - Дональд Норман</h4>
+                                    <p>Основы дизайна взаимодействия и психологии пользователей</p>
+                                    <a href="#" class="resource-link">Читать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>"Атомарный дизайн" - Брэд Фрост</h4>
+                                    <p>Методология создания дизайн-систем и компонентного дизайна</p>
+                                    <a href="#" class="resource-link">Читать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>UX Planet</h4>
+                                    <p>Популярная платформа с статьями о UX/UI дизайне</p>
+                                    <a href="#" class="resource-link">Посетить →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    🎓
+                                </div>
+                                <h3>Онлайн-курсы</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>Google UX Design Certificate</h4>
+                                    <p>Профессиональный сертификат Google по UX-дизайну</p>
+                                    <a href="#" class="resource-link">Записаться →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Interaction Design Foundation</h4>
+                                    <p>Качественные курсы по дизайну взаимодействия</p>
+                                    <a href="#" class="resource-link">Посетить →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Skillshare UX/UI курсы</h4>
+                                    <p>Практические курсы от профессионалов индустрии</p>
+                                    <a href="#" class="resource-link">Изучить →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>YouTube каналы</h4>
+                                    <p>AJ&Smart, The Futur, Flux - бесплатные уроки и кейсы</p>
+                                    <a href="#" class="resource-link">Смотреть →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    🔧
+                                </div>
+                                <h3>Инструменты и софт</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>Figma</h4>
+                                    <p>Бесплатный инструмент для UI-дизайна и прототипирования</p>
+                                    <a href="#" class="resource-link">Скачать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Adobe XD</h4>
+                                    <p>Профессиональный инструмент для UX/UI дизайна</p>
+                                    <a href="#" class="resource-link">Попробовать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Sketch</h4>
+                                    <p>Популярный инструмент для Mac-пользователей</p>
+                                    <a href="#" class="resource-link">Узнать больше →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Principle</h4>
+                                    <p>Создание анимаций и микро-взаимодействий</p>
+                                    <a href="#" class="resource-link">Изучить →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3>Сообщества и форумы</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>Dribbble</h4>
+                                    <p>Платформа для демонстрации дизайн-работ и поиска вдохновения</p>
+                                    <a href="#" class="resource-link">Присоединиться →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Behance</h4>
+                                    <p>Портфолио-платформа Adobe для дизайнеров</p>
+                                    <a href="#" class="resource-link">Посетить →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>UX Mastery Community</h4>
+                                    <p>Сообщество UX-дизайнеров для обмена опытом</p>
+                                    <a href="#" class="resource-link">Участвовать →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Reddit r/UXDesign</h4>
+                                    <p>Активное сообщество на Reddit для обсуждения UX</p>
+                                    <a href="#" class="resource-link">Подписаться →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3>Портфолио и примеры</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>Mobbin</h4>
+                                    <p>Коллекция мобильных UI-паттернов и примеров</p>
+                                    <a href="#" class="resource-link">Изучить →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Page Flows</h4>
+                                    <p>Примеры пользовательских потоков популярных приложений</p>
+                                    <a href="#" class="resource-link">Посмотреть →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>UI Movement</h4>
+                                    <p>Ежедневная подборка лучших UI-анимаций</p>
+                                    <a href="#" class="resource-link">Вдохновиться →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Landingfolio</h4>
+                                    <p>Коллекция лучших лендингов для вдохновения</p>
+                                    <a href="#" class="resource-link">Изучить →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="resource-category">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <h3>Карьерные возможности</h3>
+                            </div>
+                            <div class="resource-list">
+                                <div class="resource-item">
+                                    <h4>LinkedIn</h4>
+                                    <p>Поиск вакансий и нетворкинг в сфере дизайна</p>
+                                    <a href="#" class="resource-link">Найти работу →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>AngelList</h4>
+                                    <p>Вакансии в стартапах и IT-компаниях</p>
+                                    <a href="#" class="resource-link">Посмотреть →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Remote.co</h4>
+                                    <p>Удаленная работа для дизайнеров</p>
+                                    <a href="#" class="resource-link">Найти удаленку →</a>
+                                </div>
+                                <div class="resource-item">
+                                    <h4>Freelancer</h4>
+                                    <p>Фриланс-проекты для начинающих дизайнеров</p>
+                                    <a href="#" class="resource-link">Начать →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-path-resources">
+                        <h3>Рекомендуемый путь развития</h3>
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Изучите основы</h4>
+                                    <p>Прочитайте ключевые книги и пройдите базовые курсы</p>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Освойте инструменты</h4>
+                                    <p>Научитесь работать с Figma, Adobe XD и другими инструментами</p>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Создайте портфолио</h4>
+                                    <p>Выполните несколько проектов и разместите их на Dribbble/Behance</p>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Найдите работу</h4>
+                                    <p>Ищите стажировки, фриланс или junior-позиции</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <blockquote>
+                            "Обучение — это путешествие, а не пункт назначения. Продолжайте изучать, практиковаться и расти как дизайнер."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обзор разделов -->
+    <section class="overview">
+        <div class="overview__container">
+            <div class="overview__header">
+                <h2 class="overview__title">Обзор всех разделов</h2>
+                <p class="overview__subtitle">Полный курс по основам UX/UI дизайна</p>
+            </div>
+            
+            <div class="overview__grid">
+                <div class="overview__card">
+                    <div class="overview__number">1</div>
+                    <div class="overview__content">
+                        <h3>Главная страница</h3>
+                        <p>Обзор курса и навигация по всем разделам</p>
+                        <a href="index.html" class="overview__link">Текущая страница</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">2</div>
+                    <div class="overview__content">
+                        <h3>Что такое UX-дизайн</h3>
+                        <p>Определение, концепция и основные принципы пользовательского опыта</p>
+                        <a href="#ux-basics" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">3</div>
+                    <div class="overview__content">
+                        <h3>Понимание пользователя</h3>
+                        <p>Исследования, интервью, опросы и создание персон</p>
+                        <a href="#user-research" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">4</div>
+                    <div class="overview__content">
+                        <h3>История UX</h3>
+                        <p>Эволюция пользовательского опыта от Macintosh до наших дней</p>
+                        <a href="#ux-history" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">5</div>
+                    <div class="overview__content">
+                        <h3>UX-дизайнер</h3>
+                        <p>Роль, задачи и навыки специалиста по пользовательскому опыту</p>
+                        <a href="#ux-designer" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">6</div>
+                    <div class="overview__content">
+                        <h3>Что такое UI-дизайн</h3>
+                        <p>Определение пользовательского интерфейса и его типы</p>
+                        <a href="#ui-basics" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">7</div>
+                    <div class="overview__content">
+                        <h3>Задачи UI-дизайнера</h3>
+                        <p>Цветовая палитра, расположение элементов и компоненты интерфейса</p>
+                        <a href="#ui-tasks" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">8</div>
+                    <div class="overview__content">
+                        <h3>Главная задача UI</h3>
+                        <p>Помощь пользователю в быстром и понятном использовании продукта</p>
+                        <a href="#ui-main-task" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">9</div>
+                    <div class="overview__content">
+                        <h3>Основные принципы</h3>
+                        <p>Ясность, лаконичность, узнаваемость, отзывчивость</p>
+                        <a href="#basic-principles" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">10</div>
+                    <div class="overview__content">
+                        <h3>Дополнительные принципы</h3>
+                        <p>Постоянство, эстетика, эффективность, снисходительность</p>
+                        <a href="#additional-principles" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">11</div>
+                    <div class="overview__content">
+                        <h3>Разница UX/UI</h3>
+                        <p>Сравнение и взаимосвязь пользовательского опыта и интерфейса</p>
+                        <a href="#ux-ui-difference" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">12</div>
+                    <div class="overview__content">
+                        <h3>Современные тренды</h3>
+                        <p>Glassmorphism, ИИ, доступность и микро-анимации</p>
+                        <a href="#modern-trends" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">13</div>
+                    <div class="overview__content">
+                        <h3>Ключевые выводы</h3>
+                        <p>Главные принципы и рекомендации для успешного дизайна</p>
+                        <a href="#key-insights" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">14</div>
+                    <div class="overview__content">
+                        <h3>Интерактивный тест</h3>
+                        <p>15 вопросов для проверки знаний с автоматической оценкой</p>
+                        <a href="#interactive-test" class="overview__link">Пройти тест →</a>
+                    </div>
+                </div>
+
+                <div class="overview__card">
+                    <div class="overview__number">15</div>
+                    <div class="overview__content">
+                        <h3>Дополнительные ресурсы</h3>
+                        <p>Полезные ссылки, инструменты и материалы для дальнейшего изучения</p>
+                        <a href="#resources" class="overview__link">Изучить →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Рекомендуемый путь изучения -->
+    <section class="learning-path">
+        <div class="learning-path__container">
+            <div class="learning-path__header">
+                <h2 class="learning-path__title">Рекомендуемый путь изучения</h2>
+                <p class="learning-path__subtitle">Последовательное изучение материала для лучшего понимания</p>
+            </div>
+
+            <div class="learning-path__steps">
+                <div class="learning-path__step">
+                    <div class="learning-path__icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="learning-path__content">
+                        <h3>Начало</h3>
+                        <p>Начните с изучения основ UX дизайна</p>
+                        <a href="#ux-basics" class="btn btn-primary">Начать изучение</a>
+                    </div>
+                </div>
+
+                <div class="learning-path__arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="learning-path__step">
+                    <div class="learning-path__icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="learning-path__content">
+                        <h3>UI Основы</h3>
+                        <p>Изучите принципы пользовательского интерфейса</p>
+                        <a href="#ui-basics" class="btn btn-secondary">Изучить UI</a>
+                    </div>
+                </div>
+
+                <div class="learning-path__arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="learning-path__step">
+                    <div class="learning-path__icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="learning-path__content">
+                        <h3>Принципы</h3>
+                        <p>Освойте 8 ключевых принципов дизайна</p>
+                        <a href="#basic-principles" class="btn btn-secondary">Изучить принципы</a>
+                    </div>
+                </div>
+
+                <div class="learning-path__arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="learning-path__step">
+                    <div class="learning-path__icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="learning-path__content">
+                        <h3>Тест</h3>
+                        <p>Проверьте свои знания</p>
+                        <a href="#interactive-test" class="btn btn-primary">Пройти тест</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <i class="fas fa-palette"></i>
+                        <span>UX/UI Guide</span>
+                    </div>
+                    <p>Полное руководство по основам пользовательского опыта и интерфейса. Изучайте, практикуйтесь, создавайте.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="#ux-basics">UX Основы</a></li>
+                        <li><a href="#ui-basics">UI Основы</a></li>
+                        <li><a href="#basic-principles">Принципы</a></li>
+                        <li><a href="#modern-trends">Тренды</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Ресурсы</h4>
+                    <ul>
+                        <li><a href="#interactive-test">Тест знаний</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="#resources">Дополнительные ресурсы</a></li>
+                        <li><a href="#key-insights">Ключевые выводы</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 UX/UI Guide. Создано с ❤️ для изучения дизайна.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

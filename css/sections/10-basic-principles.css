@@ -1,0 +1,399 @@
+/* ========================================
+   BASIC PRINCIPLES - Основные принципы
+   ======================================== */
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.principle-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.principle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.principle-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.principle-card h3 {
+    margin-top: var(--spacing-md);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.principle-card p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Практическое применение */
+.principles-summary {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(34, 197, 94, 0.05) 0%, 
+        rgba(16, 185, 129, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(34, 197, 94, 0.1);
+}
+
+.principles-summary h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.principles-summary h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.summary-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.summary-card p {
+    color: var(--text-color);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Как применять принципы */
+.application-steps {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.05) 0%, 
+        rgba(139, 92, 246, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(99, 102, 241, 0.1);
+}
+
+.application-steps h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.application-steps h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.application-steps__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.application-step {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.application-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.application-step::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(139, 92, 246, 0.02));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.application-step:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.application-step:hover::after {
+    opacity: 1;
+}
+
+.application-step .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 
+        0 12px 24px rgba(99, 102, 241, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
+}
+
+.application-step:hover .step-number {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 
+        0 16px 32px rgba(99, 102, 241, 0.5),
+        0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.application-step .step-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.application-step .step-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.application-step .step-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .application-steps__container {
+        gap: var(--spacing-lg);
+    }
+    
+    .application-step {
+        padding: var(--spacing-lg);
+    }
+    
+    .application-step .step-number {
+        width: 55px;
+        height: 55px;
+        font-size: 1.375rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .principle-card {
+        padding: var(--spacing-md);
+    }
+    
+    .principle-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .principles-summary {
+        padding: var(--spacing-lg);
+    }
+    
+    .principles-summary h3 {
+        font-size: 1.25rem;
+    }
+    
+    .summary-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .summary-card p {
+        font-size: 1rem;
+    }
+    
+    .application-steps__container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .application-steps h3 {
+        font-size: 1.25rem;
+    }
+    
+    .application-step {
+        padding: var(--spacing-lg);
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .application-step .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .application-step .step-content h4 {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .principles-summary {
+        padding: var(--spacing-md);
+    }
+    
+    .principles-summary h3 {
+        font-size: 1.125rem;
+    }
+    
+    .summary-card {
+        padding: var(--spacing-md);
+    }
+    
+    .summary-card p {
+        font-size: 0.95rem;
+    }
+    
+    
+    .application-steps h3 {
+        font-size: 1.125rem;
+    }
+    
+    .application-step {
+        padding: var(--spacing-md);
+    }
+    
+    .application-step .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.125rem;
+    }
+    
+    .application-step .step-content h4 {
+        font-size: 1rem;
+    }
+    
+    .application-step .step-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .summary-card p {
+        font-size: 0.9rem;
+    }
+    
+    .application-step .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .application-step .step-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .application-step .step-content p {
+        font-size: 0.85rem;
+    }
+}

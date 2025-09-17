@@ -1,0 +1,644 @@
+/* ========================================
+   UX DESIGNER - UX-дизайнер
+   ======================================== */
+
+/* Роль и обязанности */
+.role-responsibilities {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.05) 0%, 
+        rgba(139, 92, 246, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(99, 102, 241, 0.1);
+}
+
+.role-responsibilities h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.role-responsibilities h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.responsibilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.responsibility-item {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.responsibility-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.responsibility-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.02), rgba(99, 102, 241, 0.02));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.responsibility-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 25px rgba(0, 0, 0, 0.1),
+        0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+.responsibility-item:hover::after {
+    opacity: 1;
+}
+
+.responsibility-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 
+        0 8px 16px rgba(245, 158, 11, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
+}
+
+.responsibility-item:hover .responsibility-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 12px 24px rgba(245, 158, 11, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.responsibility-content {
+    position: relative;
+    z-index: 2;
+}
+
+.responsibility-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.responsibility-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Навыки и компетенции */
+.skills-competencies {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.05) 0%, 
+        rgba(99, 102, 241, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(139, 92, 246, 0.1);
+}
+
+.skills-competencies h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.skills-competencies h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.skill-category {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.skill-category::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(99, 102, 241, 0.02));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.skill-category:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 25px rgba(0, 0, 0, 0.1),
+        0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+.skill-category:hover::after {
+    opacity: 1;
+}
+
+.skill-category h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    box-shadow: 
+        0 4px 8px rgba(99, 102, 241, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 12px rgba(99, 102, 241, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Карьерный путь */
+.career-path {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, 
+        rgba(34, 197, 94, 0.05) 0%, 
+        rgba(16, 185, 129, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(34, 197, 94, 0.1);
+}
+
+.career-path h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.career-path h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.career-stages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    position: relative;
+}
+
+.career-stages::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--success-color) 20%, 
+        var(--accent-color) 50%, 
+        var(--success-color) 80%, 
+        transparent 100%);
+    z-index: 1;
+}
+
+.career-stage {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.career-stage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--success-color), var(--accent-color));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.career-stage::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.02), rgba(245, 158, 11, 0.02));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.career-stage:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 25px rgba(0, 0, 0, 0.1),
+        0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+.career-stage:hover::after {
+    opacity: 1;
+}
+
+.stage-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--success-color), var(--accent-color));
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 
+        0 8px 16px rgba(34, 197, 94, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
+}
+
+.career-stage:hover .stage-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 
+        0 12px 24px rgba(34, 197, 94, 0.4),
+        0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stage-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.stage-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.stage-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.stage-salary {
+    background: linear-gradient(135deg, var(--success-color), var(--accent-color));
+    color: var(--text-white);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 
+        0 4px 8px rgba(34, 197, 94, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.stage-salary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 6px 12px rgba(34, 197, 94, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .responsibilities-grid {
+        gap: var(--spacing-lg);
+    }
+    
+    .career-stages {
+        gap: var(--spacing-lg);
+    }
+    
+    .skills-categories {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .role-responsibilities {
+        padding: var(--spacing-lg);
+    }
+    
+    .role-responsibilities h3 {
+        font-size: 1.25rem;
+    }
+    
+    .responsibilities-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .responsibility-item {
+        padding: var(--spacing-lg);
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .responsibility-icon {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .skills-competencies {
+        padding: var(--spacing-lg);
+    }
+    
+    .skills-competencies h3 {
+        font-size: 1.25rem;
+    }
+    
+    .skills-categories {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .skill-category {
+        padding: var(--spacing-lg);
+    }
+    
+    .skill-category h4 {
+        font-size: 1.125rem;
+    }
+    
+    .career-path {
+        padding: var(--spacing-lg);
+    }
+    
+    .career-path h3 {
+        font-size: 1.25rem;
+    }
+    
+    .career-stages {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .career-stage {
+        padding: var(--spacing-lg);
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .stage-number {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .role-responsibilities {
+        padding: var(--spacing-md);
+    }
+    
+    .role-responsibilities h3 {
+        font-size: 1.125rem;
+    }
+    
+    .responsibility-item {
+        padding: var(--spacing-md);
+    }
+    
+    .responsibility-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .responsibility-content h4 {
+        font-size: 1.125rem;
+    }
+    
+    .responsibility-content p {
+        font-size: 0.9rem;
+    }
+    
+    .skills-competencies {
+        padding: var(--spacing-md);
+    }
+    
+    .skills-competencies h3 {
+        font-size: 1.125rem;
+    }
+    
+    .skill-category {
+        padding: var(--spacing-md);
+    }
+    
+    .skill-category h4 {
+        font-size: 1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .career-path {
+        padding: var(--spacing-md);
+    }
+    
+    .career-path h3 {
+        font-size: 1.125rem;
+    }
+    
+    .career-stage {
+        padding: var(--spacing-md);
+    }
+    
+    .stage-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .stage-content h4 {
+        font-size: 1.125rem;
+    }
+    
+    .stage-content p {
+        font-size: 0.9rem;
+    }
+    
+    .stage-salary {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    .responsibility-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .responsibility-content h4 {
+        font-size: 1rem;
+    }
+    
+    .responsibility-content p {
+        font-size: 0.85rem;
+    }
+    
+    .skill-category h4 {
+        font-size: 0.9rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+    }
+    
+    .stage-number {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    .stage-content h4 {
+        font-size: 1rem;
+    }
+    
+    .stage-content p {
+        font-size: 0.85rem;
+    }
+    
+    .stage-salary {
+        font-size: 0.75rem;
+    }
+}
